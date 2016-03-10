@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="CSS\styles.css">
+    <link rel="stylesheet" type="text/css" href="CSS/960.css">
+    <title>tabpanenelen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #exitvali {
+            display: inline-block;
+            float: right
+        }
+
+        #validate {
+            bottom: 0px;
+            margin-left: -8px;
+            height: 50px;
+            width: 100%;
+            background-color: black;
+            border-color: dimgrey;
+            border-top-style: groove;
+            border-width: 3px;
+            position: fixed;
+            display: inline-block;
+        }
+
+        #validate img:hover {
+            width: 10%;
+            position: inherit;
+        }
+
+    </style>
+    <script type="text/javascript">
+
+
+        $(document).ready(function(){
+            $('#checkbox1').change(function(){
+                if(this.checked)
+                    $('#validate').fadeIn('slow');
+                else
+                    $('#validate').fadeOut('slow');
+
+            });
+        });
+
+    </script>
+</head>
+<div id="Check-Code">
+    <!--valipaste by Rick Woltheus alpha version 1-->
+
+    <div id="validate" class="autoUpdate" style="z-index: 1">
+        <a href="http://validator.w3.org/check?uri=referer" target="_blank"><img src="http://i67.tinypic.com/2itk0vt.png" alt="html"></a>
+        <!--&nbsp;&nbsp;-->
+        <a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img src="http://i66.tinypic.com/5k0iag.png" alt="css"></a>
+        <a href='#'><img src="http://i64.tinypic.com/292vbqu.png" alt="download">download files</a>
+        <form id="exitvali">
+            <input type="checkbox" class="checkbox1">
+            <?php include 'valischool.html'; ?>
+            <br>
+        </form>
+    </div>
+</div>
+<!--end code-->

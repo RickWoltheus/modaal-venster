@@ -1,8 +1,8 @@
 var modaalVenObj = (function() {
     var $window = $(window);
         var $sluitKnop = $('<span class="sluit-knop">&#10005;</span>');
-    var $modaalVenster = $('<div class="modaal-venster"></div>');
-    var $modaalInhoud = $('<div class="modaal-inhoud">');
+    var $modaalVenster = $('<div class="modaal-venster" />');
+    var $modaalInhoud = $('<div class="modaal-inhoud" />');
 
     
     $modaalVenster.append($modaalInhoud);
@@ -19,7 +19,10 @@ var modaalVenObj = (function() {
             $modaalInhoud.append(instellingen.inhoud, $sluitKnop);
             $modaalInhoud.css({width: instellingen.breedte+'px' || 'auto',
                               height: instellingen.hoogte+'px' || 'auto'})
-            $modaalInhoud.appendTo('body')
+            .on("click", function(e) {
+                e.stopPropagation();
+            });
+            $modaalVenster.appendTo('body')
                 .on('click', modaalVenObj.sluiten);
             modaalVenObj.centreren();
             $sluitKnop.on('click', modaalVenObj.sluiten);

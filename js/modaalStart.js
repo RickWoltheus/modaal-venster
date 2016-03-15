@@ -3,6 +3,7 @@ $(document).ready(function() {
     var ingangInhoud = $('#ingang').detach();
     var halInhoud = $('#hal').detach();
     var patroonInhoud = $('#patroon').detach();
+    var gabInhoud = $('#gab').detach();
     
     //events bij de thumbs : modaal venster openen met de passende inhoud erin
     $('#ingangThumb').on('click', function() {
@@ -11,6 +12,9 @@ $(document).ready(function() {
     
     $('#halThumb').on('click', function() {
         modaalVenObj.openen({inhoud: halInhoud, breedte: 1000});
+    }); 
+    $('#gabThumb').on('click', function() {
+        modaalVenObj.openen({inhoud: gabInhoud, breedte: 1000});
     });
     
     $('#patroonThumb').on('click', function() {
